@@ -221,7 +221,7 @@ class LeaderboardEvaluator(object):
         # Set up the user's agent
         try:
             agent_class_name = getattr(self.module_agent, 'get_entry_point')()
-            self.agent_instance = getattr(self.module_agent, agent_class_name)(args.agent_config)
+            self.agent_instance = getattr(self.module_agent, agent_class_name)(args.agent_config, self.client)
             config.agent = self.agent_instance
 
             # Check and store the sensors
